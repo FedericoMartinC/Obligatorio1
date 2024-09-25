@@ -1,6 +1,6 @@
 #ifndef HASH_CERRADO
 #define HASH_CERRADO
-#include <cassert>
+#include <cstring>
 #include <string>
 #include <iostream>
 using namespace std;

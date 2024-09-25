@@ -1,7 +1,6 @@
-#include <cassert>
+#include <cstring>
 #include <string>
 #include <iostream>
-#include <limits>
 #include "tads/HashCerrado.cpp"
 
 using namespace std;

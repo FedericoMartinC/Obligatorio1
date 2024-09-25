@@ -1,6 +1,6 @@
 #ifndef MIN_HEAP
 #define MIN_HEAP
-#include <cassert>
+#include <cstring>
 #include <string>
 #include <iostream>
 using namespace std;
@@ -21,6 +21,7 @@ private:
         datoDoble* aux = arr[pos1];
         arr[pos1]=arr[pos2];
         arr[pos2]=aux;
+
     }
 
     int padre(int i){
