@@ -1,11 +1,11 @@
-#ifndef MIN_HEAP
-#define MIN_HEAP
+#ifndef MIN_HEAP_ESP
+#define MIN_HEAP_ESP
 #include <cstring>
 #include <string>
 #include <iostream>
 using namespace std;
 
-class MinHeap
+class MinHeapEsp
 {
 private:
     struct datoDoble {
@@ -44,9 +44,6 @@ private:
             if(arr[posPadre]->precio > arr[pos]->precio){
                 cambio(pos,posPadre);
                 subir(posPadre);
-            }else if(arr[posPadre]->precio == arr[pos]->precio && arr[posPadre]->id < arr[pos]->id){
-                cambio(pos,posPadre);
-                subir(posPadre);
             }
         }
     }
@@ -59,25 +56,20 @@ private:
             if(posDer < primerLibre){
                 if(arr[posIzq]->precio > arr[posDer]->precio){
                     posMenor= posDer;
-                }else if(arr[posIzq]->precio == arr[posDer]->precio && arr[posIzq]->id < arr[posDer]->id){
-                    posMenor= posDer;
                 }
             }
 
             if(arr[pos]->precio > arr[posMenor]->precio){
                 cambio(pos, posMenor);
                 bajar(posMenor);
-            }else if(arr[pos]->precio == arr[posMenor]->precio && arr[pos]->id < arr[posMenor]->id){
-                cambio(pos, posMenor);
-                bajar(posMenor);
-            }   
+            } 
 
         }
     }
 
 
 public:
-    MinHeap(int _capacidad) {
+    MinHeapEsp(int _capacidad) {
         capacidad = _capacidad;
         primerLibre = 1;
         arr= new datoDoble*[capacidad+1]();
@@ -101,7 +93,6 @@ public:
         cambio(pos,primerLibre-1);
         primerLibre--;
         subir(pos);
-        bajar(pos);
     }
 
     void cambiarPrecio(int pos, int precio){
