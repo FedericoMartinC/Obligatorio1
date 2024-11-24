@@ -2,7 +2,6 @@
 #include <string>
 #include <iostream>
 #include "tads/MinHeap.cpp"
-#include "tads/HashAbierto.cpp"
 
 using namespace std;
 
