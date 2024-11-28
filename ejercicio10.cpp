@@ -57,22 +57,9 @@ bool puedoAplicarMovimiento(int** jardin,int colActual,int posfila,int* restricc
     return true;
 }
 
-void clonarSolucion(int ** origen, int **&destino,int N) {
-    destino = new int *[N]();
-    for (int i = 0; i < N; i++)
-    {
-        destino[i] = new int[N]();
-        for (int j = 0; j < N; j++)
-        {
-            destino[i][j] = origen[i][j];
-        }
-    }
-}
-
 void maxFloresOpt(int &maxFlores,int &cantFloresAct,int** jardin,int colActual,int colMax, int* restriccionesPorFlor, int cantFlores,int** &mejorJardin,int filaAct){
     if(esSolucion(colActual,colMax) && esMejorSolucion(cantFloresAct,maxFlores)){
         maxFlores=cantFloresAct;
-        clonarSolucion(jardin,mejorJardin,colMax);
     }else if(!esSolucion(colActual,colMax)){
         bool entro=false;
         for (int FAct=0;FAct<cantFlores;FAct++){
